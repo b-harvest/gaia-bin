@@ -16,9 +16,9 @@
 
 ### install docker
 
-[Windows](https://docs.docker.com/docker-for-windows/)
+[Windows](https://docs.docker.com/toolbox/overview/)
 
-- https://docs.docker.com/docker-for-windows/install/
+- https://docs.docker.com/toolbox/toolbox_install_windows/
 
 - https://hub.docker.com/editions/community/docker-ce-desktop-windows
 
