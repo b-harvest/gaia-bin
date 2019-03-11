@@ -8,8 +8,80 @@
 
 
 
-- -c : 아카이빙 하기
-- -v : Verbose 작업 로그 출력
-- -f : 출력 파일(output) 지정
-- -x : 아카이빙 해제(언아키이빙)
-- -z : gzip으로 압축과 동시에 아카이빙
+
+
+# docker
+
+
+
+### install docker
+
+[Windows](https://docs.docker.com/docker-for-windows/)
+
+- https://docs.docker.com/docker-for-windows/install/
+
+- https://hub.docker.com/editions/community/docker-ce-desktop-windows
+
+
+[Mac](https://docs.docker.com/docker-for-mac/)
+
+- https://docs.docker.com/docker-for-mac/install/
+- https://hub.docker.com/editions/community/docker-ce-desktop-mac
+
+
+
+
+
+check latest gaia version on [dockerhub](https://hub.docker.com/r/tendermint/gaia/tags)
+
+
+
+### pull docker image of tendermint/gaia
+
+```bash
+docker pull tendermint/gaia:stable
+docker pull tendermint/gaia:<Tag>
+```
+
+
+
+### get shell of docker
+
+```bash
+docker run -it tendermint/gaia:stable /bin/sh
+
+or 
+
+docker run -it -v data:<YOUR-LOCAL-PATH> tendermint/gaia:stable /bin/sh
+```
+
+```bash
+/usr/bin/gaiacli
+/usr/bin/gaiad
+```
+
+
+
+### example of key managemet
+
+```bash
+gaiacli keys list
+
+gaiacli keys add <NAME>
+gaiacli keys add <NAME> --recover
+```
+
+
+
+
+
+
+
+
+### example of running gaiad, gaiacli command using docker
+
+```bash
+docker run -v data:<Your-CUSTOM-PATH> tendermint/gaia:stable gaiacli
+docker run -v data:<Your-CUSTOM-PATH> tendermint/gaia:stable gaiad
+
+```
